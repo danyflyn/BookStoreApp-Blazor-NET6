@@ -21,10 +21,9 @@ namespace BookStoreApp.API.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            _logger.LogInformation("Made call to Weather Endpoint: Daniel message 1");
+            _logger.LogInformation("Made call to Weather Endpoint");
             try
             {
-                throw new Exception("This is our logging test exception: Daniel message 3");
                 return Enumerable.Range(1, 5).Select(index => new WeatherForecast
                 {
                     Date = DateTime.Now.AddDays(index),
@@ -35,7 +34,7 @@ namespace BookStoreApp.API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Fatal Error Occured: Daniel message 2");
+                _logger.LogError(ex, "Fatal Error Occurred");
                 throw;
             }
 
